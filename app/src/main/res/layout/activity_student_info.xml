@@ -17,54 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/picture_frame" />
 
-    <TextView
-        android:id="@+id/nameID"
-        android:layout_width="216dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/imageID"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name" />
-
-    <TextView
-        android:id="@+id/studentID"
-        android:layout_width="117dp"
-        android:layout_height="33dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Student_Id"
-        app:layout_constraintStart_toEndOf="@+id/imageID"
-        app:layout_constraintTop_toBottomOf="@+id/nameID"
-        tools:text="Student_Id" />
-
-    <TextView
-        android:id="@+id/deptID"
-        android:layout_width="122dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Depertment"
-        app:layout_constraintStart_toEndOf="@+id/imageID"
-        app:layout_constraintTop_toBottomOf="@+id/studentID"
-        tools:text="Depertment" />
-
-    <TextView
-        android:id="@+id/emailID"
-        android:layout_width="322dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Email"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageID"
-        tools:text="Email" />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="167dp"
@@ -142,14 +94,69 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/save"
+        android:id="@+id/saveID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="84dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/deptID"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="SAVE" />
+
+    <EditText
+        android:id="@+id/nameID"
+        android:layout_width="239dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toEndOf="@+id/imageID"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/studentID"
+        android:layout_width="177dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Student ID"
+        app:layout_constraintStart_toEndOf="@+id/imageID"
+        app:layout_constraintTop_toBottomOf="@+id/nameID" />
+
+    <EditText
+        android:id="@+id/deptID"
+        android:layout_width="139dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Depertment"
+        app:layout_constraintStart_toEndOf="@+id/imageID"
+        app:layout_constraintTop_toBottomOf="@+id/studentID" />
+
+    <EditText
+        android:id="@+id/emailID"
+        android:layout_width="335dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Contact Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deptID" />
 </android.support.constraint.ConstraintLayout>
