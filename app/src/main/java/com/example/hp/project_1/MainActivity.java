@@ -79,8 +79,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onStart() {
         super.onStart();
         if(mAuth.getCurrentUser() !=null){
-              //finish();
-           // Intent newIntent=new Intent(MainActivity.this,HomeActivity.class);
+            finish();
+           Intent newIntent=new Intent(MainActivity.this,HomeActivity.class);
+           startActivity(newIntent);
         }
 
     }
@@ -103,12 +104,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
 
         }
-        //pBar2.setVisibility(View.VISIBLE);
+        pBar2.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //pBar2.setVisibility(View.GONE);
+                pBar2.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     finish();
                     // Sign in success, update UI with the signed-in user's information

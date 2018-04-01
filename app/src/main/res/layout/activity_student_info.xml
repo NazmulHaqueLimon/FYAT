@@ -108,7 +108,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="SAVE" />
 
-    <EditText
+    <TextView
         android:id="@+id/nameID"
         android:layout_width="239dp"
         android:layout_height="32dp"
@@ -121,7 +121,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageID"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/studentID"
         android:layout_width="177dp"
         android:layout_height="35dp"
@@ -134,7 +134,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageID"
         app:layout_constraintTop_toBottomOf="@+id/nameID" />
 
-    <EditText
+    <TextView
         android:id="@+id/deptID"
         android:layout_width="139dp"
         android:layout_height="40dp"
@@ -147,7 +147,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageID"
         app:layout_constraintTop_toBottomOf="@+id/studentID" />
 
-    <EditText
+    <TextView
         android:id="@+id/emailID"
         android:layout_width="335dp"
         android:layout_height="39dp"
