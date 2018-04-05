@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayAdapter<String> ListAdapter;
     EditText Uemail,Upass;
 
+    Toolbar toolbar;
+
     ProgressBar pBar2;
     private FirebaseAuth mAuth;
 
@@ -34,6 +37,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+
+
+
+        toolbar=(Toolbar)findViewById(R.id.include);
+        toolbar.setTitle("BRACU-FYAT");
+        setSupportActionBar(toolbar);
 
 
         //homepage list view for news and events
@@ -79,9 +88,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onStart() {
         super.onStart();
         if(mAuth.getCurrentUser() !=null){
-            finish();
-           Intent newIntent=new Intent(MainActivity.this,HomeActivity.class);
-           startActivity(newIntent);
+            //finish();
+           //Intent newIntent=new Intent(MainActivity.this,HomeActivity.class);
+           //startActivity(newIntent);
         }
 
     }
@@ -104,12 +113,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
 
         }
-        pBar2.setVisibility(View.VISIBLE);
+        //pBar2.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                pBar2.setVisibility(View.GONE);
+                // pBar2.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     finish();
                     // Sign in success, update UI with the signed-in user's information

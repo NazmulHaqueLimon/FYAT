@@ -7,6 +7,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,7 +15,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -25,20 +25,22 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 
+
 public class StudentInfo extends AppCompatActivity {
 
     private static final int CHOOSE_IMAGE = 101;
 
-    TextView textView;
+    Toolbar toolbar;
+
+
     ImageView imageView;
-    TextView Sname,Sid,Sdept,Semail;
+    EditText Sname,Sid,Sdept,Semail;
 
 
     ProgressBar progressBar;
@@ -54,15 +56,20 @@ public class StudentInfo extends AppCompatActivity {
         setContentView(R.layout.activity_student_info);
         mAuth = FirebaseAuth.getInstance();
 
-        //Toolbar toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        Sid=(TextView) findViewById(R.id.studentID);
-        Sdept=(TextView)findViewById(R.id.deptID);
-        Semail=(TextView)findViewById(R.id.emailID);
-        Sname = (TextView) findViewById(R.id.nameID);
+
+        toolbar=(Toolbar)findViewById(R.id.include2);
+        toolbar.setTitle("BRACU-FYAT");
+        setSupportActionBar(toolbar);
+
+
+        Sid=(EditText) findViewById(R.id.studentID);
+        Sdept=(EditText)findViewById(R.id.deptID);
+        Semail=(EditText)findViewById(R.id.emailID);
+        Sname = (EditText) findViewById(R.id.nameID);
         imageView = (ImageView) findViewById(R.id.imageID);
 
         loadUserInformation();
+
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         //textView = (TextView) findViewById(R.id.textViewVerified);
 
@@ -107,12 +114,13 @@ public class StudentInfo extends AppCompatActivity {
 
             if (user.getDisplayName() != null) {
                 Sname.setText(user.getDisplayName());
+                Semail.setText(user.getEmail());
             }
 
-            if (user.isEmailVerified()) {
+            /*if (user.isEmailVerified()) {
                 textView.setText("Email Verified");
             } else {
-                textView.setText("Email Not Verified (Click to Verify)");
+                textView.setText("Email Not Verified ");
                 textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -124,7 +132,7 @@ public class StudentInfo extends AppCompatActivity {
                         });
                     }
                 });
-            }
+            }*/
         }
     }
 
@@ -182,27 +190,28 @@ public class StudentInfo extends AppCompatActivity {
         StorageReference profileImageRef =
                 FirebaseStorage.getInstance().getReference("profilepics/" + System.currentTimeMillis() + ".jpg");
 
+        //progressBar.setVisibility(View.VISIBLE);
         if (uriProfileImage != null) {
-            progressBar.setVisibility(View.VISIBLE);
+
             profileImageRef.putFile(uriProfileImage)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressBar.setVisibility(View.GONE);
+                           // progressBar.setVisibility(View.GONE);
                             profileImageUrl = taskSnapshot.getDownloadUrl().toString();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            progressBar.setVisibility(View.GONE);
+                           //  progressBar.setVisibility(View.GONE);
                             Toast.makeText(StudentInfo.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }
     }
 
-   /* @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
@@ -215,17 +224,29 @@ public class StudentInfo extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.menuLogout:
+            case R.id.logout:
 
                 FirebaseAuth.getInstance().signOut();
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
 
                 break;
+            case R.id.appHome:
+
+                finish();
+                startActivity(new Intent(this, HomeActivity.class));
+
+                break;
+            case R.id.myInfo:
+
+                finish();
+                startActivity(new Intent(this, StudentInfo.class));
+
+                break;
         }
 
         return true;
-    }*/
+    }
 
     private void showImageChooser() {
         Intent intent = new Intent();

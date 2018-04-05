@@ -6,92 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".StudentInfo">
 
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar_layout"
+     />
+
     <ImageView
         android:id="@+id/imageID"
         android:layout_width="120dp"
         android:layout_height="124dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2"
         app:srcCompat="@android:drawable/picture_frame" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="167dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="311dp"
+        android:layout_height="59dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
         android:text="TOUTORIAL CLASSES"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailID"
         tools:text="TOUTORIAL CLASSES" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="167dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="311dp"
+        android:layout_height="61dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
         android:text="ACADEMIC PROGRESS"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         tools:text="ACADEMIC PROGRESS" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="168dp"
-        android:layout_height="39dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="310dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
         android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
         android:text="SCHOLERSHIP STATUS"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailID" />
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="170dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="309dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorPrimary"
         android:text="APP HOME"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4"
         tools:text="APP HOME" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="163dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="POSTED QUESTIONS:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        tools:text="POSTED QUESTIONS:" />
-
-    <ListView
-        android:id="@+id/QuestionList"
-        android:layout_width="335dp"
-        android:layout_height="189dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/saveID"
@@ -101,59 +80,62 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
-        android:text="Button"
+        android:layout_marginTop="176dp"
+        android:background="@color/colorPrimary"
+        android:text="SAVE"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/deptID"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="SAVE" />
 
-    <TextView
+    <EditText
         android:id="@+id/nameID"
-        android:layout_width="239dp"
-        android:layout_height="32dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintStart_toEndOf="@+id/imageID"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
 
-    <TextView
+    <EditText
         android:id="@+id/studentID"
-        android:layout_width="177dp"
-        android:layout_height="35dp"
+        android:layout_width="176dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Student ID"
         app:layout_constraintStart_toEndOf="@+id/imageID"
         app:layout_constraintTop_toBottomOf="@+id/nameID" />
 
-    <TextView
+    <EditText
         android:id="@+id/deptID"
         android:layout_width="139dp"
         android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Depertment"
         app:layout_constraintStart_toEndOf="@+id/imageID"
         app:layout_constraintTop_toBottomOf="@+id/studentID" />
 
-    <TextView
+    <EditText
         android:id="@+id/emailID"
         android:layout_width="335dp"
         android:layout_height="39dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Contact Email"

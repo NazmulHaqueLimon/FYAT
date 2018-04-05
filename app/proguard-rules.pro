@@ -2,9 +2,12 @@
 # You can control the set of applied configuration files using the
 # proguardFiles setting in build.gradle.
 #
+-keepattributes Signature
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
-
+-keepclassmembers class com.yourcompany.models.** {
+  *;
+}
 # If your project uses WebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface
 # class:
